@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://upscale-ai-agency.shop/sitemap.xml

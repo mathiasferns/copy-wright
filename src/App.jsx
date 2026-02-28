@@ -80,6 +80,8 @@ const Hero = () => {
           src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2574&auto=format&fit=crop"
           alt="Dark forest moss"
           className="w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="sync"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
       </div>
@@ -322,6 +324,8 @@ const Philosophy = () => {
           alt="Organic texture"
           className="w-full h-full object-cover"
           data-speed="0.5"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       
@@ -455,6 +459,8 @@ const CTASection = () => {
             src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2574&auto=format&fit=crop"
             alt="Texture"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="relative z-10">
@@ -519,8 +525,8 @@ const Footer = () => {
           <div>
             <h4 className="font-mono text-xs text-background/40 mb-6 uppercase tracking-widest">Legal</h4>
             <ul className="space-y-4 font-outfit text-background/80">
-              <li><a href="#" className="hover:text-accent transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Terms of Service</a></li>
+              <li><a href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>
@@ -543,12 +549,16 @@ function App() {
   return (
     <div className="bg-background min-h-screen selection:bg-accent selection:text-background">
       <NoiseOverlay />
-      <Navbar />
-      <Hero />
-      <Features />
-      <Philosophy />
-      <Protocol />
-      <CTASection />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <Features />
+        <Philosophy />
+        <Protocol />
+        <CTASection />
+      </main>
       <Footer />
     </div>
   );
